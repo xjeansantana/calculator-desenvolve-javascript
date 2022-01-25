@@ -13,38 +13,38 @@
   </head>
   <body>
     <div class="fundo">
-      <div class="calculadora">
-        <img src="images/casio.png " width="110" height="40">
-        <p id="visorCima"></p>
-        <p id="visor"></p>
+      <div class="calculadora">      
+        <img src="images/casio.png " width="110" height="40">      
+        <div class="visorCima" id="visorCima"></div>
+        <div class="visor" id="visor"></div>
         <table>
           <tr>
             <td><button class="botao" onclick="clean()">AC</button></td>
             <td><button class="botao" onclick="apagarVisor()">CE</button></td>
             <td><button class="botao" onclick="apagar()"><<</button></td>
-            <td><button class="botao" onclick="insert('/'); insertTop()">/</button></td>
+            <td><button class="botao" onclick="telaBaixo('/')">/</button></td>
           </tr>
           <tr>
-            <td><button class="botao" onclick="insert('7')">7</button></td>
-            <td><button class="botao" onclick="insert('8')">8</button></td>
-            <td><button class="botao" onclick="insert('9')">9</button></td>
-            <td><button class="botao" onclick="insert('*'); insertTop()">*</button></td>
+            <td><button class="botao" onclick="telaBaixo('7')">7</button></td>
+            <td><button class="botao" onclick="telaBaixo('8')">8</button></td>
+            <td><button class="botao" onclick="telaBaixo('9')">9</button></td>
+            <td><button class="botao" onclick="telaBaixo('*')">*</button></td>
           </tr>
           <tr>
-            <td><button class="botao" onclick="insert('4')">4</button></td>
-            <td><button class="botao" onclick="insert('5')">5</button></td>
-            <td><button class="botao" onclick="insert('6')">6</button></td>
-            <td><button class="botao" onclick="insert('-'); insertTop()">-</button></td>
+            <td><button class="botao" onclick="telaBaixo('4')">4</button></td>
+            <td><button class="botao" onclick="telaBaixo('5')">5</button></td>
+            <td><button class="botao" onclick="telaBaixo('6')">6</button></td>
+            <td><button class="botao" onclick="telaBaixo('-')">-</button></td>
           </tr>
           <tr>
-            <td><button class="botao" onclick="insert('1')">1</button></td>
-            <td><button class="botao" onclick="insert('2')">2</button></td>
-            <td><button class="botao" onclick="insert('3')">3</button></td>
-            <td><button class="botao" onclick="insert('+'); insertTop()">+</button></td>
+            <td><button class="botao" onclick="telaBaixo('1')">1</button></td>
+            <td><button class="botao" onclick="telaBaixo('2')">2</button></td>
+            <td><button class="botao" onclick="telaBaixo('3')">3</button></td>
+            <td><button class="botao" onclick="telaBaixo('+')">+</button></td>
           </tr>
           <tr>
-            <td colspan="2"><button class="botao" onclick="insert('0')" style="width: 106px">0</button></td>
-            <td><button class="botao" onclick="insert('.')">.</button></td></td>
+            <td colspan="2"><button class="botao" onclick="telaBaixo('0')" style="width: 106px">0</button></td>
+            <td><button class="botao" onclick="telaBaixo('.')">.</button></td></td>
             <td rowspan="2"><button class="botao" onclick="calcular()" >=</button></td> 
           </tr>
         </table>

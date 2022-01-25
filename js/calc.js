@@ -1,4 +1,4 @@
-function insert(num) { //entrada de dados
+function telaBaixo(num) { //entrada de dados
 
     let visor = document.getElementById("visor");
 
@@ -11,18 +11,17 @@ function insert(num) { //entrada de dados
     visor.innerHTML = visor.innerHTML + num;
   }
 
-  function insertTop(num) { //mostra a operação no visor de cima
-      
+  function telaCima(num) { //mostra a operação no visor de cima
+
     let entradaInvalida = /[+-\/*]/.test(num) && /[+-\/*]$/.test(visor.innerHTML);
     if (entradaInvalida) {
-      return;
+        return;
     }
-      
-    var numVisor = document.getElementById("visor").innerHTML;
-    var numero = document.getElementById("visorCima").innerHTML;
-    document.getElementById("visorCima").innerHTML = numero + numVisor;
-    apagarVisor();
-  }
+
+    var numVisor = document.getElementById("visor").innerHTML;  
+    document.getElementById("visorCima").innerHTML = numVisor;
+   
+}
 
   function clean() { //limpa todos os campos
     apagarVisor();
@@ -40,15 +39,16 @@ function insert(num) { //entrada de dados
   }
 
   function calcular() { //calcula
+
     let visor = document.getElementById("visor").innerHTML;
-    let visorCima = document.getElementById('visorCima').innerHTML;
-    var resultado = eval(visorCima+visor)
+    // let visorCima = document.getElementById('visorCima').innerHTML;
+    var resultado = eval(visor)
 
     if (visor) {
-        insertTop();
-        document.getElementById('visorCima').innerHTML = resultado
-      return;
+        telaCima();
+        document.getElementById('visor').innerHTML = resultado
+        return;
     }
 
-    document.getElementById("visor").innerHTML = "0";
-  }
+    document.getElementById("visor").innerHTML = resultado;
+}

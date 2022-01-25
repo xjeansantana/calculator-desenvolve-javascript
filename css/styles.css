@@ -30,14 +30,15 @@
     border: none;
     color: white;
   }
+  
   .botao:hover {
     background-color: black;
   }
-  #visorCima {
+  .visor,
+  .visorCima {
     background-color: white;
-    width: 207px;
-    height: 30px;
-    margin: 5px;
+   
+    margin: 5px auto;
     font-size: 25px;
     color: black;
     border-radius: 8px;
@@ -45,18 +46,29 @@
     overflow-x: auto;
     overflow-y: hidden;
   }
-  #visor {
-    background-color: white;
-    width: 207px;
+
+  .visor {
+    width: 180px;
     height: 30px;
-    margin: 5px;
+    margin-top: 0;
+    font-size: 40px;
+    padding: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.visorCima {
+    width: 180px;
+    height: 20px;
     font-size: 25px;
-    color: black;
-    border-radius: 8px;
-    text-align: right;
-    overflow-x: auto;
-    overflow-y: hidden;
-  }
+    margin-bottom: 0;
+    padding: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+
+
   ::-webkit-scrollbar {
     height: 4px;
   }
