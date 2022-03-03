@@ -1,14 +1,20 @@
 function telaBaixo(num) { //entrada de dados
 
-    let visor = document.getElementById("visor");
+  let visor = document.getElementById("visor");
 
-    let entradaInvalida = /[+-\/*]/.test(num) && /[+-\/*]$/.test(visor.innerHTML);
+  let historico = [];
 
-    if (entradaInvalida) {
-      return;
-    }
+  let entradaInvalida = /[+-\/*]/.test(entrada) && /[+-\/*]$/.test(visor.innerHTML);
 
-    visor.innerHTML = visor.innerHTML + num;
+  if (entradaInvalida) {
+    return;
+  }
+
+  visor.innerHTML = visor.innerHTML + entrada;
+
+  historico.push(visor.innerHTML);
+
+  console.log(historico);
   }
 
   function telaCima(num) { //mostra a operação no visor de cima
