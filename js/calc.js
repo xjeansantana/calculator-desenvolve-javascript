@@ -1,8 +1,8 @@
 let operacao = [];
 let operacaoResultado = [];
+let entradaOperador = false;
 
 //let operador = ['+', '-', '*', '/'];
-let ultimoOperador;
 //let operador1 = document.querySelector(".operador1").innerHTML;
 //let operador2 = document.querySelector(".operador2").innerHTML;
 //let operador3 = document.querySelector(".operador3").innerHTML;
@@ -17,19 +17,22 @@ function telaBaixo(entrada) { //entrada de dados
 
   // if (entradaInvalida) {
   //   return;
- //  }
+  //  }
 
   let testEntrada = /[+-\/*]/.test(entrada) ? true : false; //testa se a entrada foi um operador 
 
-  if (testEntrada) { // se a entrada foi um operador armazena essa entrada numa variavel
-
-    ultimoOperador = entrada;
+  if (testEntrada) { // se a entrada foi um operador entradaOperador == true
+    entradaOperador = true;
     alert('Usei um operador')
 
-  } else if (entrada != ultimoOperador && testEntrada == true) {
-    ultimoOperador = entrada;
-    alert('Operador diferente')
+  } else if (testEntrada == false) { //se foi um numero  entradaOperador == false
+    entradaOperador = false;
+    alert('Usei numero')
 
+  } else if (entradaOperador && testEntrada) { // se foi um operador e a entrada operador for true apagar o ultimo digito
+    entradaOperador = true;
+    apagar();
+    alert('apaguei')
   }
 
   visor.innerHTML = visor.innerHTML + entrada;
