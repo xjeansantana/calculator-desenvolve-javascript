@@ -11,12 +11,11 @@ function telaBaixo(entrada) { //entrada de dados
 
   if (testEntrada) { // se a entrada foi um operador entradaOperador == true
     entradaOperador = true;
-    apagar();
-    alert('Usei um operador')
+     console.log('operador')
 
   } else if (testEntrada == false) { //se foi um numero  entradaOperador == false
     entradaOperador = false;
-    alert('Usei numero')
+   console.log('numero')
 
   } else if (entradaOperador && testEntrada) { // se foi um operador e a entrada operador for true apagar o ultimo digito
     apagar();
@@ -26,7 +25,7 @@ function telaBaixo(entrada) { //entrada de dados
 
   visor.innerHTML = visor.innerHTML + entrada;
 
-  console.log(testEntrada, entradaOperador);
+  console.log('Foi operador?',testEntrada, 'Variavel?',entradaOperador);
 }
 
 
