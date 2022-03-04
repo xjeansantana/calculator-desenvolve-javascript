@@ -5,28 +5,18 @@ function telaBaixo(entrada) { //entrada de dados
 
   let visor = document.getElementById("visor");
 
-  let testEntrada = /[+-\/*]/.test(entrada) ? true : false; //testa se a entrada foi um operador 
+  let entradaVisor = document.getElementById("visor").innerHTML;
+  let ultimaEntrada = entradaVisor.substring(entradaVisor.length - 1, entradaVisor.length)
 
-  let entradaOperador = false;
-
-  if (testEntrada) { // se a entrada foi um operador entradaOperador == true
-    entradaOperador = true;
-    console.log('operador')
-
-  } else { //se foi um numero  entradaOperador == false
-    entradaOperador = false;
-    console.log('numero')
-  }
-
-  if (testEntrada && entradaOperador){
-     entradaOperador = true;
-     console.log('apaguei');
-     apagar();
+  if (isOperator(ultimaEntrada) && isOperator(entrada)) {
+    apagar();
   }
 
   visor.innerHTML = visor.innerHTML + entrada;
+}
 
-  console.log('Foi operador?', testEntrada, 'Variavel?', entradaOperador);
+function isOperator(entrada) {
+  return /[+-\/*]/.test(entrada) ? true : false;
 }
 
 
