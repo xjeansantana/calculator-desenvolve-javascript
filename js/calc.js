@@ -11,21 +11,22 @@ function telaBaixo(entrada) { //entrada de dados
 
   if (testEntrada) { // se a entrada foi um operador entradaOperador == true
     entradaOperador = true;
-     console.log('operador')
+    console.log('operador')
 
-  } else if (testEntrada == false) { //se foi um numero  entradaOperador == false
+  } else { //se foi um numero  entradaOperador == false
     entradaOperador = false;
-   console.log('numero')
+    console.log('numero')
+  }
 
-  } else if (entradaOperador && testEntrada) { // se foi um operador e a entrada operador for true apagar o ultimo digito
-    apagar();
-    entradaOperador = true;
-    alert('apaguei')
+  if (testEntrada && entradaOperador){
+     entradaOperador = true;
+     console.log('apaguei');
+     apagar();
   }
 
   visor.innerHTML = visor.innerHTML + entrada;
 
-  console.log('Foi operador?',testEntrada, 'Variavel?',entradaOperador);
+  console.log('Foi operador?', testEntrada, 'Variavel?', entradaOperador);
 }
 
 
