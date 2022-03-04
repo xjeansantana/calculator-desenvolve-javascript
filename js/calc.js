@@ -1,17 +1,42 @@
 let operacao = [];
+let operacaoResultado = [];
+
+//let operador = ['+', '-', '*', '/'];
+let ultimoOperador;
+//let operador1 = document.querySelector(".operador1").innerHTML;
+//let operador2 = document.querySelector(".operador2").innerHTML;
+//let operador3 = document.querySelector(".operador3").innerHTML;
+//let operador4 = document.querySelector(".operador4").innerHTML;
+
 
 function telaBaixo(entrada) { //entrada de dados
 
   let visor = document.getElementById("visor");
 
-  let entradaInvalida = /[+-\/*]/.test(entrada) && /[+-\/*]$/.test(visor.innerHTML);
+  // let entradaInvalida = /[+-\/*]/.test(entrada) && /[+-\/*]$/.test(visor.innerHTML);
 
-  if (entradaInvalida) {
-    return;
+  // if (entradaInvalida) {
+  //   return;
+ //  }
+
+  let testEntrada = /[+-\/*]/.test(entrada) ? true : false; //testa se a entrada foi um operador 
+
+  if (testEntrada) { // se a entrada foi um operador armazena essa entrada numa variavel
+
+    ultimoOperador = entrada;
+    alert('Usei um operador')
+
+  } else if (entrada != ultimoOperador && testEntrada == true) {
+    ultimoOperador = entrada;
+    alert('Operador diferente')
+
   }
 
   visor.innerHTML = visor.innerHTML + entrada;
+
+  console.log(testEntrada);
 }
+
 
 function telaCima(entrada) { //mostra a operação no visor de cima
 
@@ -38,7 +63,7 @@ function apagar() { //limpa a ultima entrada
 function calcular() { //calcula
 
   let visor = document.getElementById("visor").innerHTML;
-  
+
   var resultado = eval(visor)
 
   operacao.push(visor)
@@ -46,15 +71,20 @@ function calcular() { //calcula
   if (visor) {
     telaCima();
     document.getElementById('visor').innerHTML = resultado
-    operacao.push(resultado)
-    historico();
+    operacaoResultado.push(resultado)
+    // historico();
+
     return;
   }
 
 }
 
-function historico (){
-  for (let i = 0; i < operacao.length; i++){
-    console.log(i, operacao[i])
-}
+function historico() {
+  for (let i = 0; i < operacao.length; i++) {
+
+    // console.log(operacao[i]);
+    // console.log(operacaoResultado[z]);
+    console.log(`${operacao[i]} = ${operacaoResultado[i]}`)
+  }
+
 }
