@@ -1,28 +1,17 @@
 let operacao = [];
 let operacaoResultado = [];
-let entradaOperador = false;
-
-//let operador = ['+', '-', '*', '/'];
-//let operador1 = document.querySelector(".operador1").innerHTML;
-//let operador2 = document.querySelector(".operador2").innerHTML;
-//let operador3 = document.querySelector(".operador3").innerHTML;
-//let operador4 = document.querySelector(".operador4").innerHTML;
-
 
 function telaBaixo(entrada) { //entrada de dados
 
   let visor = document.getElementById("visor");
 
-  // let entradaInvalida = /[+-\/*]/.test(entrada) && /[+-\/*]$/.test(visor.innerHTML);
-
-  // if (entradaInvalida) {
-  //   return;
-  //  }
-
   let testEntrada = /[+-\/*]/.test(entrada) ? true : false; //testa se a entrada foi um operador 
+
+  let entradaOperador = false;
 
   if (testEntrada) { // se a entrada foi um operador entradaOperador == true
     entradaOperador = true;
+    apagar();
     alert('Usei um operador')
 
   } else if (testEntrada == false) { //se foi um numero  entradaOperador == false
@@ -30,14 +19,14 @@ function telaBaixo(entrada) { //entrada de dados
     alert('Usei numero')
 
   } else if (entradaOperador && testEntrada) { // se foi um operador e a entrada operador for true apagar o ultimo digito
-    entradaOperador = true;
     apagar();
+    entradaOperador = true;
     alert('apaguei')
   }
 
   visor.innerHTML = visor.innerHTML + entrada;
 
-  console.log(testEntrada);
+  console.log(testEntrada, entradaOperador);
 }
 
 
@@ -75,8 +64,6 @@ function calcular() { //calcula
     telaCima();
     document.getElementById('visor').innerHTML = resultado
     operacaoResultado.push(resultado)
-    // historico();
-
     return;
   }
 
@@ -84,9 +71,6 @@ function calcular() { //calcula
 
 function historico() {
   for (let i = 0; i < operacao.length; i++) {
-
-    // console.log(operacao[i]);
-    // console.log(operacaoResultado[z]);
     console.log(`${operacao[i]} = ${operacaoResultado[i]}`)
   }
 
