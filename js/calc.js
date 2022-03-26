@@ -6,52 +6,56 @@ function telaBaixo(entrada) { //entrada de dados
   let entradaVisor = document.getElementById("visor").innerHTML;
   let ultimaEntrada = entradaVisor.substring(entradaVisor.length - 1, entradaVisor.length)
 
-    // if (isOperator(ultimaEntrada) && isOperator(entrada)) {
-    //   apagar();
-    // }
-      let teste = (isOperator(ultimaEntrada) && isOperator(entrada)) ? apagar() : ''; //if ternario
-      visor.innerHTML = visor.innerHTML + entrada;
-    }
-    
+  // if (isOperator(ultimaEntrada) && isOperator(entrada)) {
+  //   apagar();
+  // }
+  let teste = (isOperator(ultimaEntrada) && isOperator(entrada)) ? apagar() : ''; //if ternario
+  visor.innerHTML = visor.innerHTML + entrada;
+}
+
 // function isOperator(entrada) {
- // return /[+-\/*]/.test(entrada) ? true : false;
+// return /[+-\/*]/.test(entrada) ? true : false;
 // }
 
-const isOperator = (entrada)=>{ return /[+-\/*]/.test(entrada) ? true : false }; // arrow function
+const isOperator = (entrada) => {
+  return /[+-\/*]/.test(entrada) ? true : false
+}; // arrow function
 
 
 function telaCima(entrada) { //mostra a operação no visor de cima
   var entradaVisor = document.getElementById("visor").innerHTML;
-    document.getElementById("visorCima").innerHTML = entradaVisor;
+  document.getElementById("visorCima").innerHTML = entradaVisor;
 }
 
 //Funções apagar
 function clean() { //limpa todos os campos
   apagarVisor();
-    document.getElementById("visorCima").innerHTML = "";
+  document.getElementById("visorCima").innerHTML = "";
 }
-  function apagarVisor() { //limpa tudo do visor de baixo que recebe a entrada
-    document.getElementById("visor").innerHTML = "";
-  }
-    function apagar() { //limpa a ultima entrada
-      let visor = document.getElementById("visor").innerHTML;
-       document.getElementById("visor").innerHTML = visor.substring(0, visor.length - 1);
+
+function apagarVisor() { //limpa tudo do visor de baixo que recebe a entrada
+  document.getElementById("visor").innerHTML = "";
+}
+
+function apagar() { //limpa a ultima entrada
+  let visor = document.getElementById("visor").innerHTML;
+  document.getElementById("visor").innerHTML = visor.substring(0, visor.length - 1);
 } //termino funcões apagar
 
 
 // funcão calcular
 function calcular() { //calcula
   let visor = document.getElementById("visor").innerHTML;
-    var resultado = eval(visor)
-     operacao.push(visor)
+  var resultado = eval(visor)
+  operacao.push(visor)
 
-      if (visor) {
-        telaCima();
-        document.getElementById('visor').innerHTML = resultado
-        operacaoResultado.push(resultado)
-        historico();
-        return;
-      }
+  if (visor) {
+    telaCima();
+    document.getElementById('visor').innerHTML = resultado
+    operacaoResultado.push(resultado)
+    historico();
+    return;
+  }
 
 } //fim da função calcular
 
