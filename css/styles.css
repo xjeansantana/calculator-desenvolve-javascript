@@ -3,7 +3,7 @@
     padding: 0;
   }
   .fundo {
-    background-image: linear-gradient(to top, blue, #9600FF, #AEBAF8);
+    background-image: linear-gradient(to top, black, #9600FF, #AEBAF8);
     height: 100vh;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
