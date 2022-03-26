@@ -6,15 +6,18 @@ function telaBaixo(entrada) { //entrada de dados
   let entradaVisor = document.getElementById("visor").innerHTML;
   let ultimaEntrada = entradaVisor.substring(entradaVisor.length - 1, entradaVisor.length)
 
-    if (isOperator(ultimaEntrada) && isOperator(entrada)) {
-      apagar();
+    // if (isOperator(ultimaEntrada) && isOperator(entrada)) {
+    //   apagar();
+    // }
+      let teste = (isOperator(ultimaEntrada) && isOperator(entrada)) ? apagar() : ''; //if ternario
+      visor.innerHTML = visor.innerHTML + entrada;
     }
-     visor.innerHTML = visor.innerHTML + entrada;
-    }
+    
+// function isOperator(entrada) {
+ // return /[+-\/*]/.test(entrada) ? true : false;
+// }
 
-function isOperator(entrada) {
-  return /[+-\/*]/.test(entrada) ? true : false;
-}
+const isOperator = (entrada)=>{ return /[+-\/*]/.test(entrada) ? true : false }; // arrow function
 
 
 function telaCima(entrada) { //mostra a operação no visor de cima
